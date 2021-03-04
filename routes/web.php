@@ -13,6 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// 一覧画面を表示
+Route::get('/', 'PostController@showList')->name('posts');
