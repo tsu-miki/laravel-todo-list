@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 // 一覧画面を表示
-Route::get('/', 'PostController@showList')->name('posts');
+Route::get('/', 'App\Http\Controllers\PostController@showList')->name('posts');
