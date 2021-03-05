@@ -25,4 +25,20 @@ class PostController extends Controller
     public function showCreate() {
         return view('post.form');
     }
+
+    /**
+     * ToDo登録
+     * 
+     * @return view
+     */
+    public function exeRegister(PostRequest $request) {
+        // 投稿データの受け取り
+        $inputs = $request->all();
+        // ToDoを登録
+        Post::create($inputs);
+
+        \Session::flash('err_msg', 'ToDoを登録しました。');
+        return redirect(route('posts'));
+    }
+
 }
