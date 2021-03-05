@@ -16,4 +16,13 @@ class PostController extends Controller
         $posts = Post::all();
         return view('post.list', ['posts' => $posts]);
     }
+
+    /**
+     * 登録画面表示
+     * 
+     * @return view
+     */
+    public function showCreate() {
+        return view('post.form');
+    }
 }
