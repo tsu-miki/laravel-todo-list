@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Models\Post;
 
 class PostController extends Controller
 {
@@ -12,6 +13,7 @@ class PostController extends Controller
      * @return view
      */
     public function showList() {
-        return view('post.list');
+        $posts = Post::all();
+        return view('post.list', ['posts' => $posts]);
     }
 }

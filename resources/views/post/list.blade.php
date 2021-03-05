@@ -9,14 +9,14 @@
         <th>ID</th>
         <th>登録時間</th>
         <th>内容</th>
-        <th></th>
       </tr>
+      @foreach($posts as $post)
       <tr>
-        <td>1</td>
-        <td>2020/06/30</td>
-        <td>テスト</td>
-        <td></td>
+        <td>{{ $post->id }}</td>
+        <td>{{ $post->updated_at }}</td>
+        <td>{{ $post->content }}</td>
       </tr>
+      @endforeach
     </table>
   </div>
 </div>
