@@ -7,14 +7,14 @@
     <table class="table table-hover">
       <tr>
         <th>ID</th>
-        <th>登録時間</th>
         <th>内容</th>
+        <th>登録時間</th>
       </tr>
       @foreach($posts as $post)
       <tr>
         <td>{{ $post->id }}</td>
-        <td>{{ $post->updated_at }}</td>
         <td>{{ $post->content }}</td>
+        <td>{{ $post->created_at }}</td>
       </tr>
       @endforeach
     </table>
