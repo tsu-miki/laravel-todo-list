@@ -1,11 +1,12 @@
 @extends('layout')
-@section('title', 'ToDo登録')
+@section('title', 'ToDo編集')
 @section('content')
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
-        <h2>ToDo登録ページ</h2>
-        <form method="POST" action="{{ route('register') }}" onSubmit="return checkSubmit()">
+        <h2>ToDo編集ページ</h2>
+        <form method="POST" action="{{ route('update') }}" onSubmit="return checkSubmit()">
         @csrf
+            <input type="hidden" name="id" value="{{ $post->id }}" >
             <div class="form-group">
                 <label for="content">
                     内容
@@ -14,7 +15,7 @@
                     id="content"
                     name="content"
                     class="form-control"
-                    value="{{ old('content') }}"
+                    value="{{ $post->content }}"
                     type="text"
                 >
                 @if ($errors->has('content'))
@@ -28,7 +29,7 @@
                     キャンセル
                 </a>
                 <button type="submit" class="btn btn-primary">
-                    投稿する
+                    更新する
                 </button>
             </div>
         </form>
@@ -36,7 +37,7 @@
 </div>
 <script>
 function checkSubmit(){
-if(window.confirm('送信してよろしいですか？')){
+if(window.confirm('更新してよろしいですか？')){
     return true;
 } else {
     return false;
