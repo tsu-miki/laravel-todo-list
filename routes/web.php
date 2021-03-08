@@ -27,3 +27,6 @@ Route::get('/post/edit/{id}', 'App\Http\Controllers\PostController@showEdit')->n
 
 // ToDo編集機能
 Route::post('/post/update', 'App\Http\Controllers\PostController@exeUpdate')->name('update');
+
+// ToDo削除機能
+Route::post('/post/delete/{id}', 'App\Http\Controllers\PostController@exeDelete')->name('delete');
