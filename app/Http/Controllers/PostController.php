@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Models\Post;
 use App\Http\Requests\PostRequest;
 use PhpParser\Node\Expr\FuncCall;
+use Illuminate\Support\Facades\Log;
 
 class PostController extends Controller
 {
@@ -92,8 +93,10 @@ class PostController extends Controller
         }
         // ToDoを削除
         $post = Post::destroy($id);
-
         session()->flash('err_msg', 'ToDoを削除しました。');
+
+        // 削除ログ
+        Log::info(['id' => $id]);
         return redirect(route('posts'));
     }
 }

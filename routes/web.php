@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,3 +31,7 @@ Route::post('/post/update', 'App\Http\Controllers\PostController@exeUpdate')->na
 
 // ToDo削除機能
 Route::post('/post/delete/{id}', 'App\Http\Controllers\PostController@exeDelete')->name('delete');
+
+// Route::get('/post/delete/{id}', function() {
+//     Log::info('削除ログです。');
+// });
