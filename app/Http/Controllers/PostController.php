@@ -39,7 +39,7 @@ class PostController extends Controller
         // ToDoを登録
         Post::create($inputs);
         
-        \Session::flash('err_msg', 'ToDoを登録しました。');
+        session()->flash('err_msg', 'ToDoを登録しました。');
         return redirect(route('posts'));
     }
 
@@ -53,7 +53,7 @@ class PostController extends Controller
         $post = Post::find($id);
 
         if(is_null($post)) {
-            \Session::flash('err_msg', 'データがありません。');
+            session()->flash('err_msg', 'データがありません。');
             return redirect(route('posts'));
         }
 
@@ -75,7 +75,7 @@ class PostController extends Controller
         ]);
         $post->save();
         
-        \Session::flash('err_msg', 'ToDoを更新しました。');
+        session()->flash('err_msg', 'ToDoを更新しました。');
         return redirect(route('posts'));
     }
 
@@ -87,13 +87,13 @@ class PostController extends Controller
      */
     public function exeDelete($id) {
         if(empty($id)) {
-            \Session::flash('err_msg', 'データがありません。');
+            session()->flash('err_msg', 'データがありません。');
             return redirect(route('posts'));
         }
         // ToDoを削除
         $post = Post::destroy($id);
 
-        \Session::flash('err_msg', 'ToDoを削除しました。');
+        session()->flash('err_msg', 'ToDoを削除しました。');
         return redirect(route('posts'));
     }
 }

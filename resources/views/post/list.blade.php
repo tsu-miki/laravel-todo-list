@@ -4,6 +4,9 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
     <h1>ToDo一覧</h1>
+    @if (session('err_msg'))
+      <p class="text-danger">{{ session('err_msg') }}</p>
+    @endif
     <table class="table table-hover">
       <tr>
         <th>ID</th>
