@@ -13,11 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// 一覧画面を表示
+// ToDo一覧画面の表示
 Route::get('/', 'App\Http\Controllers\PostController@showList')->name('posts');
 
-// 登録画面を表示
+// ToDo登録画面の表示
 Route::get('/post/create', 'App\Http\Controllers\PostController@showCreate')->name('create');
 
-// ToDoの登録
+// ToDo登録機能
 Route::post('/post/register', 'App\Http\Controllers\PostController@exeRegister')->name('register');
+
+// ToDo編集画面の表示
+Route::get('/post/edit/{id}', 'App\Http\Controllers\PostController@showEdit')->name('edit');
+
+// ToDo編集機能
+Route::post('/post/update', 'App\Http\Controllers\PostController@exeUpdate')->name('update');
