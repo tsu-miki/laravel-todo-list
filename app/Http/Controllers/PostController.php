@@ -78,4 +78,22 @@ class PostController extends Controller
         \Session::flash('err_msg', 'ToDoを更新しました。');
         return redirect(route('posts'));
     }
+
+    /**
+     * ToDo削除機能
+     * 
+     * @param int $id
+     * @return view
+     */
+    public function exeDelete($id) {
+        if(empty($id)) {
+            \Session::flash('err_msg', 'データがありません。');
+            return redirect(route('posts'));
+        }
+        // ToDoを削除
+        $post = Post::destroy($id);
+
+        \Session::flash('err_msg', 'ToDoを削除しました。');
+        return redirect(route('posts'));
+    }
 }
