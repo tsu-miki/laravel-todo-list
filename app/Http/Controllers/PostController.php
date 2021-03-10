@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Models\Post;
+use App\Models\Post;
 use App\Http\Requests\PostRequest;
 use PhpParser\Node\Expr\FuncCall;
 use Illuminate\Support\Facades\Log;
